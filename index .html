@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chaima Eleuch — Portfolio</title>
+  <meta name="description" content="Portfolio de Chaima ELEUCH — Biologiste, Microbiologiste, Biochimiste & Fondatrice de Chic, Glam and You" />
+  <style>
+    :root {
+      --bg: #FAF7F6;           /* blanc cassé */
+      --card: #F3EDE7;         /* beige clair */
+      --muted: #777777;        /* gris moyen */
+      --accent: #D9917F;       /* rose doux */
+      --accent-2: #C49A6C;     /* sable clair */
+      --dark: #333333;         /* gris foncé */
+      --radius: 12px;
+      --max-width: 980px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--dark);
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: var(--max-width);
+      margin: 28px auto;
+      padding: 24px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 0.2px;
+      color: var(--dark);
+    }
+    .roles {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    nav a {
+      margin-left: 14px;
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:first-child {
+      margin-left: 0;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: var(--accent);
+      outline: none;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .intro {
+      background: var(--card);
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      color: var(--dark);
+    }
+    .intro h2 {
+      margin-top: 0;
+      font-size: 18px;
+      color: var(--dark);
+    }
+    .cta {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: 0 4px 8px rgba(217, 145, 127, 0.5);
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background: linear-gradient(90deg, var(--accent-2), var(--accent));
+      outline: none;
+    }
+    .btn-ghost {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+    .btn-ghost:hover,
+    .btn-ghost:focus {
+      background-color: var(--accent);
+      color: white;
+      outline: none;
+    }
+    aside.card {
+      background: var(--card);
+      padding: 18px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      color: var(--dark);
+    }
+    aside img {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .project {
+      padding: 14px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), transparent);
+      color: var(--dark);
+    }
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid #E6D7CA;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    @media (max-width: 920px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 560px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 12px;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: inset 0 -1px 0 #f6f4f3;
+      color: var(--dark);
+    }
+    .meta {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .muted-pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #faf7f6;
+      border: 1px solid #f0e9e6;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    /* Boutique images style */
+    .boutique-item {
+      background: #fff;
+      padding: 12px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--dark);
+    }
+    .boutique-item div.image {
+      width: 100%;
+      height: 140px;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 8px;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+      color: var(--accent-2);
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo"><img src="1735849560363.jpeg" alt="Logo Chic Glam & You"></div>
+        <div>
+          <h1>Chaima Eleuch</h1>
+          <div class="roles">Biologiste • Microbiologiste • Biochimiste • Fondatrice — Chic, Glam and You</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projets">Projets</a>
+        <a href="#boutique">Boutique</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="intro">
+        <h2>Bonjour — je suis Chaima</h2>
+        <p class="small">Biologiste, titulaire d’un Master en biochimie et microbiologie, spécialisée en bioinformatique structurale. J’allie rigueur scientifique et esprit entrepreneurial pour porter des projets innovants et à fort impact. <strong>Chic, Glam and You</strong>.</p>
+        <div class="meta">
+          <div class="muted-pill">Sfax, Tunisie</div>
+          <div class="muted-pill">eleuchchaima20@gmail.com</div>
+          <div class="muted-pill">+216 58 405 289</div>
+        </div>
+        <div class="cta">
+          <a class="btn btn-primary" href="#projets">Voir mes projets</a>
+          <a class="btn btn-ghost" href="#cv">Télécharger le CV</a>
+        </div>
+        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+          <div class="contact-card" style="min-width:160px">
+            <strong>Contact</strong>
+            <div class="small">Email : <a href="mailto:eleuchchaima20@gmail.com">eleuchchaima20@gmail.com</a></div>
+            <div class="small">Instagram : <a href="https://instagram.com/chicglamandyou" target="_blank" rel="noopener noreferrer">@chicglamandyou</a></div>
+            <div class="small">LinkedIn : <a href="https://www.linkedin.com/in/chaima-eleuch-3a5679229" target="_blank" rel="noopener noreferrer">Chaima Eleuch</a></div>
+          </div>
+          <div class="contact-card" style="min-width:180px">
+            <strong>CV</strong>
+            <div class="small">Téléchargez mon CV :</div>
+            <a class="btn" href="ELEUCH-chaima.pdf" download style="margin-top:8px">Télécharger le CV (PDF)</a>
+          </div>
+        </div>
+      </div>
+      <aside class="card">
+        <img src="499735583_122097841856885440_6960632834999084638_n.jpg" alt="Photo de Chaima Eleuch" />
+        <div class="small"><strong>Fondatrice</strong> — Chic, Glam and You</div>
+        <p class="small">Produits : Skincare • Maquillage • Parfums • Bijoux</p>
+      </aside>
+    </section>
+
+    <section id="projets">
+      <h2>Projets Scientifiques</h2>
+      <p class="small">Sélection de travaux et communications en bioinformatique structurale.</p>
+      <div class="grid">
+        <article class="project">
+          <h3>Modélisation 3D de la transamidase GPI et étude des interactions protéiques</h3>
+          <div class="small">Modélisation tridimensionnelle des sous-unités et analyse des interactions protéine–protéine.</div>
+        </article>
+        <article class="project">
+          <h3>Criblage in silico et découverte de ligands</h3>
+          <div class="small">Docking moléculaire pour l’identification de ligands, réalisation d’études protéine-ligand et analyse de la stabilité des complexes.</div>
+        </article>
+        <article class="project">
+          <h3>Base de données sur huiles essentielles</h3>
+          <div class="small">Collecte et annotation des propriétés chimiques et thérapeutiques.</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="boutique">
+      <h2>Chic Glam & You — Boutique</h2>
+      <p class="small">Ma boutique en ligne dédiée aux soins et au maquillage.</p>
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:12px;">
+        <div class="boutique-item">
+          <div class="image" style="background-image: url('Skin-Center-of-South-Miami-Facials-and-Skin-Care.jpg');" aria-label="Image soins du visage" role="img"></div>
+          <strong>Skincare</strong>
+          <div class="small">Soins du visage.</div>
+        </div>
+        <div class="boutique-item">
+          <div class="image" style="background-image: url('16628253-fond-de-beaute-avec-cosmetique-faciale-produits-de-maquillage-espace-libre-pour-le-texte-copiez-l-espace-disposition-moderne-vue-de-dessus-mise-a-plat-maquillage-soins-de-la-peau-concept-de-beaute-photo.jpg');" aria-label="Image maquillage" role="img"></div>
+          <strong>Maquillage</strong>
+          <div class="small">Essentiels make-up.</div>
+        </div>
+        <div class="boutique-item">
+          <div class="image" style="background-image: url('81169826-perfume-bottles-with-flowers-petals-on-white-background-perfumery-cosmetics-jewelry-and-fragrance.jpg');" aria-label="Image bijoux et parfums" role="img"></div>
+          <strong>Bijoux & Parfums</strong>
+          <div class="small">Accessoires et parfums.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv">
+      <h2>Mon CV</h2>
+      <p class="small">Vous pouvez visualiser ou télécharger mon CV :</p>
+      <div>
+        <a class="btn btn-primary" href="ELEUCH-chaima.pdf" download>Télécharger le CV (PDF)</a>
+        <a class="btn btn-ghost" href="ELEUCH-chaima.pdf" target="_blank" rel="noopener noreferrer">Ouvrir le CV</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="small">Email : <a href="mailto:eleuchchaima20@gmail.com">eleuchchaima20@gmail.com</a></p>
+      <p class="small">Instagram : <a href="https://instagram.com/chicglamandyou" target="_blank" rel="noopener noreferrer">@chicglamandyou</a></p>
+      <p class="small">LinkedIn : <a href="https://www.linkedin.com/in/chaima-eleuch-3a5679229/" target="_blank" rel="noopener noreferrer">Chaima Eleuch</a></p>
+    </section>
+
+    <footer>
+      <div>© 2025 Chaima ELEUCH — Portfolio • Design professionnel • Responsive</div>
+    </footer>
+  </div>
+</body>
+</html>
